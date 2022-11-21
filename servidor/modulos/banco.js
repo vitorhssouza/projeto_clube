@@ -35,18 +35,4 @@ const banco = new Conexao('localhost', 3306, 'root', 'Ci&nci4d&d4d0s2008', 'db_c
 
 banco.verificaConexao
 
-class Endereco{
-    constructor(logadouro, numero, bairro, cidade, cep, estado, id_associados){
-        this.logadouro = logadouro;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.cep = cep;
-        this.estado = estado;
-        this.id_associados = id_associados;
-    }
 
-    
-
-
-}
