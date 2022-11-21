@@ -11,6 +11,11 @@ app.get('/', (req,res)=>{
     res.render('home', {layout:false});
 })
 
+//Criando a rota login da aplicação
+app.get('/login', (req,res)=>{
+    res.render('login', {layout:false});
+})
+
 
 //Executando o servidor
 app.listen(3000, () => {
