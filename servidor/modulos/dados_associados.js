@@ -47,6 +47,11 @@ class Dependentes extends Pessoas{
     }
 }
 
+class Administradores extends Pessoas{
+    constructor(nome, sobrenome, cpf){
+        super(nome, sobrenome, cpf)
+    }
+}
 
 
 class Endereco{
@@ -88,5 +93,27 @@ class Endereco{
         return this.id_associados;
     }
 }
+
+class Itens{
+    constructor(nome){
+        this.nome = nome;
+    }
+
+    get getNome(){
+        return this.nome;
+    }
+}
+
+class ItensComuns extends Itens{
+    constructor(nome, quantidade){
+        super(nome)
+        this.quantidade = quantidade;
+    }
+
+    get getQuantidade(){
+        return this.quantidade;
+    }
+}
+
 
 
