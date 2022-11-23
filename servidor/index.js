@@ -6,18 +6,28 @@ const app = express();      // Instânciando métodos do express na constante
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
+
+
 //Criando a rota principal da aplicação
 app.get('/', (req,res)=>{
     res.render('home', {layout:false});
 })
+
+//Criando a rota para sobre da pagina
+app.get('/sobre', (req,res)=>{
+    res.render('sobre', {layout:false});
+});
 
 //Criando a rota login da aplicação
 app.get('/login', (req,res)=>{
     res.render('login', {layout:false});
 })
 
+app.use(express.static('public'));
 
 //Executando o servidor
 app.listen(3000, () => {
     console.log("Servidor Executando em localhost:3000")
 });
+
+app.use(express.static('public'));
