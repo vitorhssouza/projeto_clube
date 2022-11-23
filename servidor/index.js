@@ -7,7 +7,6 @@ app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
 
-
 //Criando a rota principal da aplicação
 app.get('/', (req,res)=>{
     res.render('home', {layout:false});
@@ -21,7 +20,17 @@ app.get('/sobre', (req,res)=>{
 //Criando a rota login da aplicação
 app.get('/login', (req,res)=>{
     res.render('login', {layout:false});
-})
+});
+
+//Criando a rota cadastros da aplicação
+app.get('/cadastros', (req,res)=>{
+    res.render('cadastros', {layout:false});
+});
+
+//Criando a rota contatos da aplicação
+app.get('/contatos', (req,res)=>{
+    res.render('contatos', {layout:false});
+});
 
 app.use(express.static('public'));
 
