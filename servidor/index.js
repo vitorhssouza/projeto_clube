@@ -4,6 +4,8 @@ const app = express();                              // Instânciando métodos do
 const home = require('./rotas/home');               // Importando a rota home
 const login = require('./rotas/login');             // Importando a rota login
 const cadastros = require('./rotas/cadastro');      // Importando a rota cadastros
+const sobre = require('./rotas/sobre');             // Importando a rota sobre    
+const contato = require('./rotas/contato')          // Importando a rota contato  
 
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
@@ -20,16 +22,11 @@ app.use(login);
 // Utilizando a rota cadastros da aplicação
 app.use(cadastros)
 
+// Utilizando a rota sobre da aplicação
+app.use(sobre);
 
-//Criando a rota para sobre da pagina
-app.get('/sobre', (req,res)=>{
-    res.render('sobre', {layout:false});
-});
-
-//Criando a rota contatos da aplicação
-app.get('/contatos', (req,res)=>{
-    res.render('contatos', {layout:false});
-});
+//Utilizando a rota contatos da aplicação
+app.use(contato);
 
 app.use(express.static('public'));
 
