@@ -8,9 +8,13 @@ app.set('view engine', 'handlebars');
 
 
 //Criando a rota principal da aplicação
+/*
 app.get('/', (req,res)=>{
     res.render('home', {layout:false});
-})
+})*/
+const home = require('./rotas/home');
+
+app.use(home);
 
 //Criando a rota para sobre da pagina
 app.get('/sobre', (req,res)=>{
@@ -18,14 +22,26 @@ app.get('/sobre', (req,res)=>{
 });
 
 //Criando a rota login da aplicação
+/*
 app.get('/login', (req,res)=>{
     res.render('login', {layout:false});
 });
+*/
+
+const login = require('./rotas/login');
+app.use(login);
+
 
 //Criando a rota cadastros da aplicação
+/* 
 app.get('/cadastros', (req,res)=>{
     res.render('cadastros', {layout:false});
 });
+*/
+
+const cadastros = require('./rotas/cadastro');
+app.use(cadastros)
+
 
 //Criando a rota contatos da aplicação
 app.get('/contatos', (req,res)=>{
