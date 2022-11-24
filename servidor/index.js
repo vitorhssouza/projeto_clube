@@ -1,47 +1,30 @@
-const express = require('express');  // Importando pacote/módulo express
-const exphbs = require('express-handlebars');  // Importando pacote/módulo Express-Handlebars
-const app = express();      // Instânciando métodos do express na constante 
+const express = require('express');                 // Importando pacote/módulo express
+const exphbs = require('express-handlebars');       // Importando pacote/módulo Express-Handlebars
+const app = express();                              // Instânciando métodos do express na constante 
+const home = require('./rotas/home');               // Importando a rota home
+const login = require('./rotas/login');             // Importando a rota login
+const cadastros = require('./rotas/cadastro');      // Importando a rota cadastros
 
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
 
-//Criando a rota principal da aplicação
-/*
-app.get('/', (req,res)=>{
-    res.render('home', {layout:false});
-})*/
-const home = require('./rotas/home');
 
+// Utilizando a rota principal da aplicação
 app.use(home);
+
+// Utilizando a rota login da aplicação
+app.use(login);
+
+// Utilizando a rota cadastros da aplicação
+app.use(cadastros)
+
 
 //Criando a rota para sobre da pagina
 app.get('/sobre', (req,res)=>{
     res.render('sobre', {layout:false});
 });
-
-//Criando a rota login da aplicação
-/*
-app.get('/login', (req,res)=>{
-    res.render('login', {layout:false});
-});
-*/
-
-const login = require('./rotas/login');
-app.use(login);
-
-
-//Criando a rota cadastros da aplicação
-/* 
-app.get('/cadastros', (req,res)=>{
-    res.render('cadastros', {layout:false});
-});
-*/
-
-const cadastros = require('./rotas/cadastro');
-app.use(cadastros)
-
 
 //Criando a rota contatos da aplicação
 app.get('/contatos', (req,res)=>{
@@ -55,4 +38,3 @@ app.listen(3000, () => {
     console.log("Servidor Executando em localhost:3000")
 });
 
-app.use(express.static('public'));
