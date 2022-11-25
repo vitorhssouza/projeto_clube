@@ -28,6 +28,7 @@ app.use(sobre);
 //Utilizando a rota contatos da aplicação
 app.use(contato);
 
+// Metodo para reconhecer arquivo css
 app.use(express.static('public'));
 
 //Verificando conexão com o base de dados e executando o servidor
