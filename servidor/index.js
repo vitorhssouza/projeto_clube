@@ -6,6 +6,8 @@ const login = require('./rotas/login');             // Importando a rota login
 const cadastros = require('./rotas/cadastro');      // Importando a rota cadastros
 const sobre = require('./rotas/sobre');             // Importando a rota sobre    
 const contato = require('./rotas/contato')          // Importando a rota contato  
+const conn = require('./banco_dados/database')      // Importando o arquivo banco_dados da pasta database
+
 
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
@@ -28,8 +30,15 @@ app.use(contato);
 
 app.use(express.static('public'));
 
-//Executando o servidor
-app.listen(3000, () => {
-    console.log("Servidor Executando em localhost:3000")
-});
+//Verificando conexão com o base de dados e executando o servidor
+conn.sync().then(() => {
+    app.listen(3000, () => {
+        console.log("Servidor Executando em localhost:3000")
+    });
+}).catch((error) => {
+    console.log(error)
+})
+
+
+
 
