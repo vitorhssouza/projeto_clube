@@ -11,8 +11,6 @@ const contato = require('./rotas/contato')          // Importando a rota contato
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
-
-
 // Utilizando a rota principal da aplicação
 app.use(home);
 
