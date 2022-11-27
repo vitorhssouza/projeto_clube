@@ -13,11 +13,16 @@ const save = (app.post('cadastros/save', async (req, res) => {
     const nome = req.body.firstname;
     const sobrenome = req.body.lastname;
     const setor = req.body.setor;
-    const numero = req.body.number;
+    const contato = req.body.contato;
+    const dataNascimento = req.body.dataNascimento;
+    const logadouro = req.body.logadouro;
+    const numero = req.body.numero;
+    const bairro = req.body.bairro;
+    const cidade = req.body.cidade;
+    const cep = req.body.cep;
+    const estado = req.body.estado;
+    const email = req.body.email;
     const senha = req.body.password;
-    
-
-    
 
 
-}))
+}));
