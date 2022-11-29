@@ -7,11 +7,17 @@ const cadastros = require('./rotas/cadastro');      // Importando a rota cadastr
 const sobre = require('./rotas/sobre');             // Importando a rota sobre    
 const contato = require('./rotas/contato')          // Importando a rota contato  
 const conn = require('./banco_dados/database')      // Importando o arquivo banco_dados da pasta database
+const Associados = require('./banco_dados/Associados')
+
 
 
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
+
+//Configuração de formulario para receber os dados
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // Utilizando a rota principal da aplicação
 app.use(home);
@@ -19,8 +25,11 @@ app.use(home);
 // Utilizando a rota login da aplicação
 app.use(login);
 
+
 // Utilizando a rota cadastros da aplicação
-app.use(cadastros)
+app.use(cadastros.cadastros)
+
+app.use(cadastros.cadastrosSave)
 
 // Utilizando a rota sobre da aplicação
 app.use(sobre);
