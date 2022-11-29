@@ -1,24 +1,20 @@
 const express = require('express');         // Importando pacote/módulo express
-const { create } = require('express-handlebars');
-const { Sequelize } = require('sequelize'); // const exphbs = require('express-handlebars');  
-const sequelize = require('../banco_dados/database'); 
-const Associados = require('../banco_dados/clube');
+const Associados = require('../banco_dados/Associados');
 const app = express();      // Instânciando métodos do express na constante 
 
 
 
 const cadastros = app.get('/cadastros',(req,res)=>{
     res.render('cadastros', {layout:false});
-    console.log(Associados.findAll({raw: true}))
+    //console.log(Associados.findAll({raw: true}))
     
 });
 
-module.exports = cadastros;
+const cadastrosSave = app.post('/cadastros/save', async (req, res) => {
 
-const save = (app.post('/clube/cadastros/save', async (req, res) => {
-
-    const nome = req.body.firstname;
+    let nome = req.body.nome;
     const sobrenome = req.body.lastname;
+    const cpf = req.body.cpf;
     const setor = req.body.setor;
     const contato = req.body.contato;
     const dataNascimento = req.body.dataNascimento;
@@ -31,7 +27,11 @@ const save = (app.post('/clube/cadastros/save', async (req, res) => {
     const email = req.body.email;
     const senha = req.body.password;
 
-      
-}));
+    await Associados.create({nome, sobrenome, cpf, setor, contato, dataNascimento, logadouro, numero,
+                            bairro, cidade, cep, estado, email, senha});
+    
+    res.redirect('/')
+    console.log('Cadastrados')
+});
 
-sequelize.createSchema
+module.exports = {cadastros, cadastrosSave};
