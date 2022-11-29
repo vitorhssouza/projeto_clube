@@ -37,4 +37,6 @@ const cadastrosSave = app.post('/cadastros/save', async (req, res) => {
     
 });
 
+
+
 module.exports = {cadastros, cadastrosSave};
