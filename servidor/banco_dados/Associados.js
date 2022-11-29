@@ -14,7 +14,7 @@ const Associados = sequelize.define('associados', {
     cpf: {type: DataTypes.STRING(16), allowNull: false},
     setor: {type: DataTypes.STRING(100), allowNull: false},
     contato: {type: DataTypes.STRING(45), allowNull: false},
-    data_nascimento: {type: DataTypes.DATETIME, allowNull: false},
+    data_nascimento: {type: DataTypes.DATEONLY, allowNull: false},
     logadouro: {type: DataTypes.STRING(200), allowNull: false},
     numero: {type: DataTypes.STRING(45), allowNull: false},
     bairro: {type: DataTypes.STRING(100), allowNull: false},
