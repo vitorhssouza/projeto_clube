@@ -7,6 +7,7 @@ const cadastros = require('./routes/cadastro');      // Importando a rota cadast
 const sobre = require('./routes/sobre');             // Importando a rota sobre    
 const contato = require('./routes/contato')          // Importando a rota contato  
 const usuario = require('./routes/menu_associados')
+const admin = require('./routes/menu_administrador')
 const conn = require('./db/database')      // Importando o arquivo banco_dados da pasta database
 const Associados = require('./db/Associados')              // Importando a classe Associados
 const Administradores = require('./db/Administradores')    // Importando a classe administradores
@@ -43,7 +44,6 @@ app.use(cadastros.cadastros)
 app.use(cadastros.cadastrosSave)
 
 
-
 // Utilizando a rota sobre da aplicação
 app.use(sobre);
 
@@ -54,6 +54,10 @@ app.use(contato);
 
 //Utilizando rota de usuario
 app.use(usuario.usuario)
+
+
+// Utilizando rota de admin
+app.use(admin)
 
 
 // Metodo para reconhecer arquivo css
