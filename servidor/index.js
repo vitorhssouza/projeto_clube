@@ -6,6 +6,7 @@ const login = require('./routes/login');             // Importando a rota login
 const cadastros = require('./routes/cadastro');      // Importando a rota cadastros
 const sobre = require('./routes/sobre');             // Importando a rota sobre    
 const contato = require('./routes/contato')          // Importando a rota contato  
+const usuario = require('./routes/menu_associados')
 const conn = require('./db/database')      // Importando o arquivo banco_dados da pasta database
 const Associados = require('./db/Associados')              // Importando a classe Associados
 const Administradores = require('./db/Administradores')    // Importando a classe administradores
@@ -41,6 +42,9 @@ app.use(sobre);
 
 //Utilizando a rota contatos da aplicação
 app.use(contato);
+
+//Utilizando rota de usuario
+app.use(usuario)
 
 // Metodo para reconhecer arquivo css
 app.use(express.static('public'));
