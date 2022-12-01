@@ -6,13 +6,13 @@ const login = require('./routes/login');             // Importando a rota login
 const cadastros = require('./routes/cadastro');      // Importando a rota cadastros
 const sobre = require('./routes/sobre');             // Importando a rota sobre    
 const contato = require('./routes/contato')          // Importando a rota contato  
-const conn = require('./banco_dados/database')      // Importando o arquivo banco_dados da pasta database
-const Associados = require('./banco_dados/Associados')              // Importando a classe Associados
-const Administradores = require('./banco_dados/Administradores')    // Importando a classe administradores
-const Agendamento = require('./banco_dados/Agendamento')            // Importando a classe agendamento
-const Analise = require('./banco_dados/Analise')                    // Importando a classe analise
-const AreasComuns = require('./banco_dados/AreaComuns')             // Importando a classe areas comuns
-const Dependentes = require('./banco_dados/Dependentes')            // Importando a classe dependentes
+const conn = require('./db/database')      // Importando o arquivo banco_dados da pasta database
+const Associados = require('./db/Associados')              // Importando a classe Associados
+const Administradores = require('./db/Administradores')    // Importando a classe administradores
+const Agendamento = require('./db/Agendamento')            // Importando a classe agendamento
+const Analise = require('./db/Analise')                    // Importando a classe analise
+const AreasComuns = require('./db/AreaComuns')             // Importando a classe areas comuns
+const Dependentes = require('./db/Dependentes')            // Importando a classe dependentes
 
 
 
