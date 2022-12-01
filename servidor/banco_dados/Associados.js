@@ -24,8 +24,7 @@ const Associados = sequelize.define('associados', {
     email: {type: DataTypes.STRING(70), allowNull: false},
     senha: {type: DataTypes.STRING(50), allowNull: false},
     situacao: {type: DataTypes.STRING(45), allowNull: true},
-    
-    
+       
 },{
     timestamps: false,
     

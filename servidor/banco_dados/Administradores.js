@@ -18,6 +18,6 @@ const Administradores = sequelize.define('administradores', {
 
 }, {
     timestamps: false,
-});
+},sequelize.sync());
 
 module.exports = Administradores
