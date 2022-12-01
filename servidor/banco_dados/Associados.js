@@ -29,7 +29,6 @@ const Associados = sequelize.define('associados', {
 },{
     timestamps: false,
     
-},
-sequelize.sync());
+},sequelize.sync());
 
 module.exports = Associados

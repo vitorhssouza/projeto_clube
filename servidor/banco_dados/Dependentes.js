@@ -1,4 +1,4 @@
-const { INTEGER } = require('sequelize');
+/* const { INTEGER } = require('sequelize');
 const sequelize = require('./database');
 const {DataTypes} = require('sequelize');
 const Associados = require('./Associados')
@@ -14,6 +14,7 @@ const GrauParentesco = sequelize.define('graus_parentesco', {
 }, {
     timestamps: false,
 }, sequelize.sync());
+
 
 const Dependentes = sequelize.define('dependentes', {
     id_dependentes: {
@@ -31,14 +32,8 @@ const Dependentes = sequelize.define('dependentes', {
 }, sequelize.sync());
 
 
-Dependentes.hasMany(GrauParentesco, {
-    foreignKey: 'id_graus_parentesco'
-})
-
-Associados.hasMany(Dependentes, {
-    foreignKey: 'id_associados'
-})
 
 module.exports = {GrauParentesco, Dependentes}
 
 
+*/

@@ -9,8 +9,6 @@ const contato = require('./rotas/contato')          // Importando a rota contato
 const conn = require('./banco_dados/database')      // Importando o arquivo banco_dados da pasta database
 const Associados = require('./banco_dados/Associados')
 
-
-
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
