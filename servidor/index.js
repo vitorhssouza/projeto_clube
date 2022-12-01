@@ -16,7 +16,6 @@ const AreasComuns = require('./db/AreaComuns')             // Importando a class
 const Dependentes = require('./db/Dependentes')            // Importando a classe dependentes
 
 
-
 //Define o Handlebars como Template Engine da nossa aplicação
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -28,8 +27,14 @@ app.use(express.json());
 // Utilizando a rota principal da aplicação
 app.use(home);
 
+
 // Utilizando a rota login da aplicação
-app.use(login);
+app.use(login.login);
+
+// utilizando a rota para post de login 
+app.use(login.verificar)
+
+
 
 // Utilizando a rota cadastros da aplicação
 app.use(cadastros.cadastros)
@@ -37,14 +42,19 @@ app.use(cadastros.cadastros)
 // Utilizando rota de cadastros de associados
 app.use(cadastros.cadastrosSave)
 
+
+
 // Utilizando a rota sobre da aplicação
 app.use(sobre);
+
 
 //Utilizando a rota contatos da aplicação
 app.use(contato);
 
+
 //Utilizando rota de usuario
-app.use(usuario)
+app.use(usuario.usuario)
+
 
 // Metodo para reconhecer arquivo css
 app.use(express.static('public'));
