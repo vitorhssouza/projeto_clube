@@ -1,11 +1,11 @@
 const express = require('express');                 // Importando pacote/módulo express
 const exphbs = require('express-handlebars');       // Importando pacote/módulo Express-Handlebars
 const app = express();                              // Instânciando métodos do express na constante 
-const home = require('./rotas/home');               // Importando a rota home
-const login = require('./rotas/login');             // Importando a rota login
-const cadastros = require('./rotas/cadastro');      // Importando a rota cadastros
-const sobre = require('./rotas/sobre');             // Importando a rota sobre    
-const contato = require('./rotas/contato')          // Importando a rota contato  
+const home = require('./routes/home');               // Importando a rota home
+const login = require('./routes/login');             // Importando a rota login
+const cadastros = require('./routes/cadastro');      // Importando a rota cadastros
+const sobre = require('./routes/sobre');             // Importando a rota sobre    
+const contato = require('./routes/contato')          // Importando a rota contato  
 const conn = require('./banco_dados/database')      // Importando o arquivo banco_dados da pasta database
 const Associados = require('./banco_dados/Associados')              // Importando a classe Associados
 const Administradores = require('./banco_dados/Administradores')    // Importando a classe administradores
