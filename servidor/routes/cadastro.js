@@ -27,7 +27,7 @@ const cadastrosSave = app.post('/cadastros/save', async (req, res) => {
     const email = req.body.email;
     const senha = req.body.password;
 
-    console.log(data_nascimento)
+    //console.log(data_nascimento)
     
     await Associados.create({nome, sobrenome, cpf, setor, contato, data_nascimento, logadouro, numero,
                             bairro, cidade, cep, estado, email, senha, situacao: 'Pendente'});
