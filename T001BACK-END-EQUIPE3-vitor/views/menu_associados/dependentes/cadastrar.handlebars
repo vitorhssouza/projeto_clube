@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tela_dependentes/cadastro.css">
+    <title>Cadastro Dependentes</title>
+</head>
+
+<body>
+    
+        <div class="form">
+            <form action="/clube/associado/dependente/save" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>                  
+                </div>
+
+                <div class="input-group">
+                    
+                    <div class="input-box">
+                        <label>Primeiro nome</label>
+                        <input id="" type="text" name="nome" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" >
+                    </div>
+
+                </div>
+                
+                <div class="continue-button">
+                    <button type="submit"><a href="/">Continuar</a></button>
+                </div>
+               
+            </form>
+            <div class="continue-button">
+                <button type="submit"><a href="/clube/associado">Voltar</a> </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
