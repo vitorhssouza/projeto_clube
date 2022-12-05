@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tela_adm/style_principal.css">
+
+    <title>Administradores</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="container">
+                <li><a href='/clube/admin/agendamento'>Agendamentos</a></li>
+                <li><a href='/clube/admin/pesquisa'>Buscar associado</a></li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+
+    <hr>
+
+
+    <h1>Associados</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>CPF</th>
+            <th>Setor</th>
+            <th>Situação</th>
+        </tr>
+        <tbody>
+        {{#each associados}}
+        <tr>
+            <th>{{this.id_associados}}</th>
+            <th>{{this.nome}}</th>
+            <th>{{this.sobrenome}}</th>
+            <th>{{this.cpf}}</th>
+            <th>{{this.setor}}</th>
+            <th>{{this.situacao}}</th>
+            <th>
+            <a href="/clube/admin/associado/detalhes/{{this.id_associados}}">Exibir Detalhes</a>
+            <a href="/clube/admin/associado/situacao/ativar/{{this.id_associados}}">Ativa</a>
+            <a href="/clube/admin/associado/situacao/desativa/{{this.id_associados}}">Desativa</a>
+            <a href="/clube/admin/associado/delete/{{this.id_associados}}">Excluir</a>
+        </th>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/../tela_adm/detalhes_user.css">
+
+    <title>Administradores</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="container">
+                <li><a href='/clube/admin/agendamento'>Agendamentos</a></li>
+                <li><a href='/clube/admin/pesquisa'>Pesquisa</a></li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+
+    <hr>
+
+    {{#with detalhe}}
+<h3>Detalhes do Associado: {{nome}} {{sobrenome}}</h3>
+<ul>
+    <li>ID Associado: {{id_associados}}</li>
+    <li>Nome: {{nome}}</li>
+    <li>Sobrenome: {{sobrenome}}</li>
+    <li>Cpf: {{cpf}}</li>
+    <li>Setor: {{setor}}</li>
+    <li>Contato: {{contato}}</li>
+    <li>Data Nascimento: {{data_nascimento}}</li>
+    <li>Logadouro: {{logadouro}}</li>
+    <li>Numero: {{numero}}</li>
+    <li>Bairro: {{bairro}}</li>
+    <li>Cidade: {{cidade}}</li>
+    <li>CEP: {{cep}}</li>
+    <li>estado: {{estado}}</li>
+    <li>E-mail: {{email}}</li>
+    <li>Status: {{situacao}}</li>
+</ul>
+{{/with}}
+
+
+    
+</body>
+
+</html>

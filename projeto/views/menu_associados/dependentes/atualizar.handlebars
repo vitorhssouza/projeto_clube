@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tela_dependentes/cadastro.css">
+    <title>Atualizar Dados Dependentes</title>
+</head>
+
+<body>
+        <div class="form">
+            <form action="/clube/associado/{{associado.id}}/dependentes/save" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Atualizar Dependente</h1>
+                    </div>                  
+                </div>
+
+                <div class="input-group">
+                    
+                    <div class="input-box">
+                        <label>Primeiro nome</label>
+                        <input id="nome" type="text" name="nome" value="{{dependente.nome}}" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input id="sobrenome" type="text" name="sobrenome" value="{{dependente.sobrenome}}" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" value="{{dependente.cpf}}">
+                    </div>
+
+                    {{#with parentesco}}
+                    {{#if situacao}}
+                    <div class="input-box">
+                        <select class="form-select-sm" name="parentesco">
+                            <option selected>Grau Parentesco</option>
+                            <option value="Cônjugue" selected>Cônjugue</option>
+                            <option value="Filho">Filho(a)</option>
+                        </select>
+                    </div>
+                    {{else}}
+                    <div class="input-box">
+                        <select class="form-select-sm" name="parentesco">
+                            <option selected>Grau Parentesco</option>
+                            <option value="Cônjugue" selected>Cônjugue</option>
+                            <option value="Filho" selected>Filho(a)</option>
+                        </select>
+                    </div>
+                    {{/if}}
+                </div>
+                
+                <div class="continue-button">
+                    <button type="submit">Continuar</a></button>
+                </div>
+               
+            </form>
+            <div class="continue-button">
+                <button type="submit"><a href="/clube/associado/{{associados.id}}">Voltar</a> </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
