@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" type="text/css" href="../../tela_user/style.css" media="screen" />
+    <title>Bem-Vindo</title>
+</head>
+    <body>
+        
+        {{#with associados}}
+
+<body>
+    <header>
+        <nav>
+            <ul class="container">
+                 <li>
+                        <a href="/clube/associado/edit" aria-label="Acesso a página Galeria">Atualizar Dados</a>
+                    </li>
+                    {{#if situacao }}
+                    <li>
+                        <a href="/clube/associado/{{id_associados}}/dependentes" aria-label="Acesso ao HOME">Cadastrar Dependentes</a>
+                    </li>
+                    <li>
+                        <a href="/clube/associado/{{id_associados}}/dependentes/view" aria-label="Acesso a visualização Dependentes">Visualizar Dependentes</a>
+                    </li>
+                    <li>
+                        <a href="/clube/associado/{{id_associados}}/agendamento" aria-label="Acesso a página personagens">Agendamentos</a>
+                    </li>
+                    {{/if}}
+                      
+                    <li>
+                        <a href="/" aria-label="Acesso a página Vídeos">Sair</a>
+                    </li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+
+    <hr>
+
+        <h3>Bem-Vindo {{nome}}</h3>
+        {{#if situacao}}
+            <h3>Status: ativo</h3>
+        {{else}}
+            <h3>Status: desativado</h3>
+        {{/if}}
+       
+        <h3>Agendamento anteriores</h3>
+
+        {{/with}}
+    </body>
+</html>
