@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../tela_adm/style_principal.css"> 
+    
+   
+    <title>Agendamento</title>
+</head>
+<body>
+<header>
+        <nav>
+            <ul class="container">
+                <li>
+                    <a href="/clube/associado/edit" aria-label="Acesso a página Galeria">Atualizar Dados</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/dependentes" aria-label="Acesso ao HOME">Cadastrar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/dependentes/view" aria-label="Acesso a visualização Dependentes">Visualizar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/agendamento" aria-label="Acesso a página personagens">Agendamentos</a>
+                </li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <br>
+    
+    <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+         <div class="input-box">
+            <select class="form-select-sm" name="areasComuns">
+                <option selected>Áreas Comuns</option>
+                <option value="Quiosque 1">Quiosque 1</option>
+                <option value="Quiosque 2">Quiosque 2</option>
+                <option value="Quiosque 3">Quiosque 3</option>
+                <option value="Quiosque 4">Quiosque 4</option>
+                <option value="Campo de Futebol">Campo de Futebol</option>
+                <option value="Quadra de futsal">Quadra de futsal</option>
+            </select>
+        </div>
+
+        <hr>
+        <h2>Itens disponivel na area comum</h2>
+        <table border="1px">
+            <tr>
+                <th>Nome</th>
+                <th>Quantidade</th>
+            </tr>
+            {{#each itens_comuns}}
+            <tr>
+                <td>{{this.nome}}</td>
+                <td>{{this.quantidade}}</td>
+            </tr>
+            {{/each}}
+
+        </table>
+
+        <div class="input-box">
+            <label for="data">Data</label>
+            <input id="data" type="date" name="data" >
+        </div>
+        <div class="continue-button">
+            <button type="submit">Continuar</a></button>
+        </div>
+
+    </form>
+    <div class="continue-button">
+        <button type="submit"><a href="/clube/associado/{{id}}">Voltar</a> </button>
+    </div>
+
+    
+</body>
+</html>

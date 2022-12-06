@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" type="text/css" href="../../tela_user/tela_principal.css" media="screen" />
+    <title>Bem-Vindo</title>
+</head>
+    <body>
+ {{#with associados}}
+<header>
+        <nav>
+            <ul class="container">
+                <li>
+                    <a href="/clube/associado/{{id_associados}}/edit" aria-label="Acesso a página Galeria">Atualizar Dados</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id_associados}}/dependentes" aria-label="Acesso ao HOME">Cadastrar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id_associados}}/dependentes/view" aria-label="Acesso a visualização Dependentes">Visualizar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id_associados}}/agendamento" aria-label="Acesso a página personagens">Agendamentos</a>
+                </li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+    <hr>
+
+
+
+       
+        <h3>Bem-Vindo {{nome}}</h3>
+        {{#if situacao}}
+            <h3>Status: ativo</h3>
+        {{else}}
+            <h3>Status: desativado</h3>
+        {{/if}}
+        
+        {{/with}}
+        <hr>
+       
+        </table>
+
+        
+    </body>
+</html>
