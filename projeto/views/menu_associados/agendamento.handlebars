@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../tela_user/tela_agendamento.css"> 
+    
+   
+    <title>Agendamento</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="/clube/associado/{{id}}/edit" aria-label="Acesso a página Galeria">Atualizar Dados</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/dependentes" aria-label="Acesso ao HOME">Cadastrar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/dependentes/view" aria-label="Acesso a visualização Dependentes">Visualizar Dependentes</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}/agendamento" aria-label="Acesso a página personagens">Agendamentos</a>
+                </li>
+                <li>
+                    <a href="/clube/associado/{{id}}" aria-label="Acesso a página personagens">Voltar</a>
+                </li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <br>
+
+    <main role="main" class="container" >
+            {{#if messages.message}}
+                {{#if messages.sucesso}}
+                    <div style="color: green;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messages.sucesso}}</strong> 
+                    
+                {{/if}}
+                {{#if messages.agendado}}
+                    <div style="color: green;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messages.agendado}}</strong> 
+                    
+                {{/if}}
+                {{#if messages.error}}
+                    <div style="color: green;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messages.error}}</strong> 
+                    
+                {{/if}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        {{!-- <span aria-hidden="true"></span> --}}
+                        <a aria-hidden="true" href="/clube/associado/{{id}}/agendamento">&times;</a>
+                </button>
+                
+            {{/if}}
+    </main>  
+    <br>
+    <br>
+
+    <div class="area-grid">
+
+        <div class="grid-card">
+            <h5>Quiosque 1</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="1" />
+                <ul class="form-items">
+                    <li>Churrasqueira Alvenaria - 1</li>
+                    <li>Mesas - 5</li>
+                    <li>Cadeiras - 20</li>
+                    <li>Freezer - 1</li>
+                    <li>Wi-Fi</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="grid-card">
+            <h5>Quiosque 2</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="2" />
+                <ul class="form-items">
+                    <li>Churrasqueira Alvenaria - 1</li>
+                    <li>Mesas - 5</li>
+                    <li>Cadeiras - 20</li>
+                    <li>Freezer - 1</li>
+                    <li>Wi-Fi</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="grid-card">
+            <h5>Quiosque 3</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="3" />
+                <ul class="form-items">
+                    <li>Churrasqueira Alvenaria - 1</li>
+                    <li>Mesas - 5</li>
+                    <li>Cadeiras - 20</li>
+                    <li>Freezer - 1</li>
+                    <li>Wi-Fi</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="grid-card">
+            <h5>Quiosque 4</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="4" />
+                <ul class="form-items">
+                    <li>Churrasqueira Alvenaria - 1</li>
+                    <li>Mesas - 5</li>
+                    <li>Cadeiras - 20</li>
+                    <li>Freezer - 1</li>
+                    <li>Wi-Fi</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="grid-card">
+            <h5>Campo de Futebol</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="5" />
+                <ul class="form-items">
+                    <li>Bolas - 4</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="grid-card">
+            <h5>Quadra de Futsal</h5>
+            <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+                <input type="hidden" name="areasComuns" value="6" />
+                <ul class="form-items">
+                    <li>Bolas - 4</li>
+                    
+                </ul>
+                <div class="divider"></div>
+                <div class="input-box">
+                    <label for="data">Selecione uma data</label>
+                    <input id="data" type="date" name="data" >
+                </div>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+
+        
+    </div>
+   
+
+
+
+    {{!-- <br>
+    <br>
+    
+    <form action="/clube/associado/{{id}}/agendamento/save" method="post">
+         <div class="input-box">
+            
+            <select class="form-select-sm" name="areasComuns">
+                <option selected>Áreas Comuns</option>
+                {{#each area_comum}}
+                <option value="{{this.id_areas_comuns}}">{{this.nome}}</option>
+                {{/each}}
+            </select>
+            
+        </div>
+
+        <hr>
+        <h2>Itens disponivel na area comum</h2>
+        
+
+        <div class="input-box">
+            <label for="data">Data</label>
+            <input id="data" type="date" name="data" >
+        </div>
+        <div class="continue-button">
+            <button type="submit">Cadastrar</button>
+        </div>
+
+    </form>
+    <div class="continue-button">
+        <button type="submit"><a href="/clube/associado/{{id}}">Voltar</a> </button>
+    </div>
+ --}}
+
+    
+</body>
+</html>

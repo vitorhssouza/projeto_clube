@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../tela_adm/agendamento.css"> 
+    <title>Agendamentos</title>
+</head>
+<body>
+        <header>
+        <nav>
+            <ul class="container">
+                <li><a href='/clube/admin/{{id}}/agendamento'>Agendamentos</a></li>
+                <li><a href='/clube/admin/{{id}}'>Voltar</a></li>
+                <li><a href='/'>Sair</a></li>
+            </ul><!-- .container -->
+        </nav>
+    </header>
+    <h1>Agendamentos</h1>
+
+    <form action="/clube/admin/{{id}}/agendamento" method="GET">
+        <select style="margin-left: 43.6%;" class="form-select" name="filtro">
+            <option selected>Opções de filtragens</option>
+            <option value="1">Nome Associado</option>
+            <option value="2">Nome Área de Lazer</option>
+            <option value="3">Data</option>
+        </select>
+
+        <div>
+            <div>
+                <input class="input-2" name="search" type="text" placeholder="Pesquise" aria-label="Search"/>
+                <br>
+                <br>            
+            </div>
+            <input style="margin-left: 46.5%;" class="continue-button" type="submit" value="Pesquisar"/>
+    </form>
+    </div>  
+    <br>
+    <br>
+    <table border="1px">
+            <tr>
+                <th>Nome Associado</th>
+                <th>Áreas de Lazer</th>
+                <th>Data</th>
+
+            </tr>
+            {{#each teste}}
+            
+            <tr>
+                <td>{{this.nome}}</td>
+                <td>{{this.[agendamentos.areas_comun.nome]}}</td>
+                <td>{{this.[agendamentos.data]}}</td>   
+            </tr>  
+            {{/each}}        
+
+        </table>
+    
+</body>
+</html>

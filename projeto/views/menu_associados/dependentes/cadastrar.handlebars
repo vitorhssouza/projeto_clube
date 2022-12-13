@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../tela_dependentes/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../../../tela_user/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../tela_user/styleUser.css" media="screen" />
+    <title>Cadastro Dependentes</title>
+</head>
+
+<body>
+        <div class="form">
+            <form action="/clube/associado/{{associados.id_associados}}/dependentes/save" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastrar Dependente</h1>
+                    </div>                  
+                </div>
+
+                <div class="input-group">
+                    
+                    <div class="input-box">
+                        <label>Primeiro nome</label>
+                        <input id="nome" type="text" name="nome" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input id="sobrenome" type="text" name="sobrenome" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" >
+                    </div>
+
+                    <div class="input-box">
+                        <select class="form-select-sm" name="parentesco">
+                            <option selected>Grau Parentesco</option>
+                            {{#each grauParentesco}}
+                            <option value="{{this.id_graus_parentesco}}">{{this.descricao}}</option>
+                            {{/each}}
+                            
+                        </select>
+                    </div>
+
+                </div>
+                
+                <div class="continue-button">
+                    <button type="submit">Continuar</a></button>
+                </div>
+               
+            </form>
+            <div class="continue-button">
+                <button type="submit"><a href="/clube/associado/{{associados.id_associados}}">Voltar</a> </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

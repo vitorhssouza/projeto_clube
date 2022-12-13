@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tela_cadastros/style.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    
+        <div class="form">
+
+            <div class="login-button">
+                <button><a href="/clube/login">Entrar</a></button>
+            </div>
+
+            <form action="/clube/cadastro/save" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                   
+                </div>
+
+                <div class="input-group">
+                    
+                    <div class="input-box">
+                        <label>Primeiro nome</label>
+                        <input id="" type="text" name="nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="text">Setor</label>
+                        <input id="Setor" type="setor" name="setor" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="text">Data Nascimento</label>
+                        <input id="" type="date" name="dataNascimento" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Contato</label>
+                        <input id="number" type="tel" name="number" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Logadouro</label>
+                        <input id="logadouro" type="text" name="logad" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Número</label>
+                        <input id="numero" type="text" name="num" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Cidade</label>
+                        <input id="cidade" type="text" name="cidade" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">CEP</label>
+                        <input id="cep" type="text" name="cep" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Estado</label>
+                        <input id="estado" type="text" name="estado" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">E-mail</label>
+                        <input id="email" type="text" name="email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" required>
+                    </div>
+
+                </div>
+                
+                <div class="continue-button">
+                    <button type="submit">Continuar</a></button>
+                </div>
+               
+            </form>
+            <div class="continue-button">
+                <button type="submit"><a href="/">Voltar</a> </button>
+            </div>
+
+            <br>
+        <div>
+            {{#if messages.message}}
+                {{#if messages.error}}
+                    <div style="color: red;" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{messages.error}}</strong> 
+                {{/if}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        {{!-- <span aria-hidden="true"></span> --}}
+                        <a aria-hidden="true" href="/clube/cadastro">&times;</a>
+                </button>
+            {{/if}}
+        </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
